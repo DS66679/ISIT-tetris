@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form id="S_main_area" method="POST" action="{{ url_for('settings_post') }}">
+        <div id="S_settings_area">
+            <div class="S_parameter_area">
+                {{ form.height.label }}<br>
+                {{ form.height(size=5) }}
+            </div>
+            <div class="S_parameter_area">
+                {{ form.width.label }}<br>
+                {{ form.width(size=5) }}
+            </div>
+            <div class="S_parameter_area">
+                {{ form.speed.label }}<br>
+                {{ form.speed(size=5) }}
+            </div>
+            <div id="S_msg">
+                {% for cat, msg in get_flashed_messages(True) %}
+                    <div class="flash {{cat}}">{{msg}}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="S_figures_area">
+            <h3>Цвета фигур</h3>
+            {% set figures=[('I','I_color'),('O','O_color'),('T','T_color'),('L','L_color'),
+                ('J','J_color'),('S','S_color'),('Z','Z_color')] %}
+            {% for i,j in figures %}
+            <div id="S_figures_colors_area">
+                <img src="{{ url_for('static',filename='images/figures/'+i+'.png') }}" alt="" width="40" height="40">
+                {{ form[j](type="color") }}
+            </div>
+            {% endfor %}
+        </div>
+
+        <div id="S_buttons_area">
+            <a href="{{ url_for('menu') }}">Назад</a>
+            {{ form.apply() }}
+            {{ form.save() }}
+            <button type="button" id="S_delete">Удаление выбранного набора</button>
+            <select id="settings_select">
+                <option value="">Сохраненные настройки</option>
+                {% for i in varients_settings %}
+                    <option value="{{ i.id }}">Набор {{ i.id }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </form>
+</div>
+<script type="module">
+    import { settings_list } from "{{ url_for('static', filename='js/settings.js') }}";
+    settings_list();
+</script>
+{% endblock %}

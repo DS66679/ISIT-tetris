@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% include 'presentation.html' %}
+  <div class="center_zone center_zone2">
+    <a href="{{ url_for('game') }}">Играть</a>
+    <a href="{{ url_for('top_score') }}">Рейтинг</a>
+    <a href="{{ url_for('settings') }}">Настройки</a>
+    <a href="{{ url_for('logout') }}">Выход</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Тетрис</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{{ url_for('static',filename='images/figures/T.png') }}" rel="icon">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/settings.css') }}">
+</head>
+<body>
+  {% block presentation %}{% endblock %}
+  {% block content %}{% endblock %}
+</body>
+</html>

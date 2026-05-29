@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include 'presentation.html' %}
+
+    <form method="POST" class="center_zone">
+        <h1>Регистрация</h1>
+        {{ form.csrf_token }}
+        <div>
+            {{ form.username.label }}<br>
+            {{ form.username(size=40) }}<br>
+        </div>
+        <div>
+            {{ form.email.label }}<br>
+            {{ form.email(size=40) }}<br>
+        </div>
+        <div>
+            {{ form.password.label }}<br>
+            {{ form.password(size=40) }}<br>
+        </div>
+        <div>
+            {{ form.confirm_password.label }}<br>
+            {{ form.confirm_password(size=40) }}<br>
+        </div>
+        <div>
+            {{ form.submit() }}
+            <a href="{{ url_for('login') }}">Войти</a>
+        </div>
+        <div>
+            {% for cat, msg in get_flashed_messages(True) %}
+                <div class="flash {{cat}}">{{msg}}</div>
+            {% endfor %}
+        </div>
+    </form>
+{% endblock %}

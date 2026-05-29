@@ -1,0 +1,90 @@
+#S_main_area {
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-columns: 60% 40%;
+    height: 100%;
+    width: 100%;
+}
+
+#S_settings_area {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    display: grid;
+    font-size: 27px;
+    font-family: 'Copperplate', Copperplate, Fantasy;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #8d8d8d;
+}
+
+.S_parameter_area{
+    margin: 20px 0;
+}
+
+#S_settings_area input[type="number"]{
+    width: 50%;
+    padding: 5px;
+    margin: 6px 0;
+    background-color: black;
+    color: var(--grey-color);
+    border: 2px solid var(--white-color);
+    border-radius: 7px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+
+#S_figures_area {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    border: 1px solid #8d8d8d;
+    display: grid;
+    gap: 20px;
+    font-size: 27px;
+    font-family: 'Copperplate', Copperplate, Fantasy;
+    box-sizing: border-box;
+    text-align: center;
+}
+#S_figures_area input[type="color"] {
+    cursor: pointer;
+}
+#S_figures_area h3 {
+    margin: 15px 0;
+    display: grid;
+    place-items: center;
+}
+#S_figures_area img {
+    height: 50px;
+    width: 90px;
+}
+
+#S_buttons_area {
+    grid-row: 2/3;
+    grid-column: 1/3;
+    border: 1px solid #8d8d8d;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+#S_buttons_area input[type="submit"],
+#S_buttons_area a,
+#S_buttons_area button,
+#S_buttons_area select{
+    background-color: #4f4f4f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: 'Copperplate', Copperplate, Fantasy;
+}
+
+#S_buttons_area input[type="submit"]:hover,
+#S_buttons_area a:hover,
+#S_buttons_area button:hover,
+#S_buttons_area select:hover {
+    background-color: #303030;
+}

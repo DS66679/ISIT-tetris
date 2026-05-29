@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="module">
+    import { startgame } from "{{ url_for('static', filename='js/tetris.js') }}";
+    startgame();
+    window.gotomenu = {menu: "{{ url_for('menu') }}"};
+</script>
+
+{% endblock %}
