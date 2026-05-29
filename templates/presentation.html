@@ -1,0 +1,9 @@
+<div id="namemenu"></div>
+<canvas id="figeresee"></canvas>
+<script type="module">
+    import { change_consts } from "{{ url_for('static', filename='js/constants.js') }}";
+    change_consts();
+    import { backgroundfigures } from "{{ url_for('static', filename='js/backgroundfigures.js') }}";
+    backgroundfigures();
+
+</script>
